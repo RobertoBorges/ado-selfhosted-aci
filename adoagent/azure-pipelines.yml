@@ -17,7 +17,7 @@ parameters:
 
   - name: TF_VERSION
     type: string
-    default: 1.0.4
+    default: 1.1.9
     displayName: Terraform Version
 
   - name: repository

@@ -27,7 +27,7 @@ RUN curl -LsS https://aka.ms/InstallAzureCLIDeb | bash \
     && rm -rf /var/lib/apt/lists/*
 
 ARG TARGETARCH=amd64
-ARG AGENT_VERSION=2.185.1
+ARG AGENT_VERSION=2.202.1
 ARG TF_VERSION
 
 RUN echo ${TF_VERSION}
