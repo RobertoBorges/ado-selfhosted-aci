@@ -26,7 +26,7 @@ RUN ln -sf /usr/bin/python3 /usr/bin/python
 RUN curl -LsS https://aka.ms/InstallAzureCLIDeb | bash \
     && rm -rf /var/lib/apt/lists/*
 
-ARG TARGETARCH=amd64
+ARG TARGETARCH=x64
 ARG AGENT_VERSION=2.202.1
 ARG TF_VERSION
 
@@ -50,6 +50,7 @@ RUN if [ "$TARGETARCH" = "amd64" ]; then \
     curl -LsS "$AZP_AGENTPACKAGE_URL" | tar -xz
 
 COPY ./start.sh .
+RUN sed -i -e 's/\r$//' ./start.sh
 RUN chmod +x start.sh
 
 ENTRYPOINT [ "./start.sh" ]
